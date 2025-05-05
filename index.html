@@ -150,27 +150,27 @@
     &copy; 2025 Vítor Hugo Reis. Todos os direitos reservados.
   </footer>
 
-  <script>
-    function enviarMensagem() {
-      const servico = document.getElementById('servico').value;
-      let mensagem = 'Olá, Vítor! Gostaria de falar sobre ';
+<script>
+  function enviarMensagem() {
+    const servico = document.getElementById('servico').value;
+    let mensagem = 'Olá, Vítor! Gostaria de falar sobre ';
 
-      switch (servico) {
-        case 'ajustes':
-          mensagem += 'ajustes de HTML.';
-          break;
-        case 'criacao':
-          mensagem += 'criação de sites.';
-          break;
-        case 'remodelagem':
-          mensagem += 'remodelagem de sites.';
-          break;
-      }
-
-      const numero = '559981312500';
-      const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-      window.open(link, '_blank');
+    switch (servico) {
+      case 'ajustes':
+        mensagem += 'ajustes de HTML.';
+        break;
+      case 'criacao':
+        mensagem += 'criação de sites.';
+        break;
+      case 'remodelagem':
+        mensagem += 'remodelagem de sites.';
+        break;
     }
+
+    const numero = '5554981312500';
+    const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    window.open(link, '_blank');
+  }
   </script>
 </body>
 </html>
