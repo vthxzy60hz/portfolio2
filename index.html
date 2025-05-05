@@ -13,26 +13,26 @@
     }
 
     body {
-      background: #000000;
+      background: #000;
       color: #f8fafc;
       line-height: 1.6;
     }
 
     header {
-      background: #111111;
+      background: #111;
       padding: 2rem;
       text-align: center;
-      box-shadow: 0 0 10px #ff1744;
+      border-bottom: 2px solid #ff0000;
     }
 
     header h1 {
       font-size: 2.5rem;
-      color: #ff1744;
-      text-shadow: 0 0 10px #ff1744;
+      color: #ff0000;
+      text-shadow: 0 0 10px #ff0000;
     }
 
     header p {
-      color: #f1f1f1;
+      color: #cbd5e1;
       font-size: 1.2rem;
     }
 
@@ -49,27 +49,24 @@
     }
 
     .service {
-      background: #1a1a1a;
-      border: 2px solid #333;
+      background: #111;
+      border: 2px solid #222;
       padding: 1.5rem;
       border-radius: 1rem;
       transition: all 0.3s ease;
-      cursor: pointer;
-      touch-action: manipulation;
+      position: relative;
     }
 
-    .service:hover,
-    .service:focus-within,
-    .service:active {
+    .service:hover {
+      border-color: #ff0000;
+      box-shadow: 0 0 20px #ff0000;
       transform: scale(1.05);
-      border-color: #ff1744;
-      box-shadow: 0 0 15px #ff1744;
     }
 
     .service h3 {
       margin-bottom: 0.5rem;
-      color: #ff1744;
-      text-shadow: 0 0 5px #ff1744;
+      color: #ff0000;
+      text-shadow: 0 0 5px #ff0000;
     }
 
     .cta {
@@ -77,28 +74,38 @@
       margin-top: 3rem;
     }
 
+    select {
+      padding: 0.7rem 1.2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      background: #111;
+      color: #ff0000;
+      border: 2px solid #ff0000;
+      text-shadow: 0 0 3px #ff0000;
+    }
+
     .cta a {
       display: inline-block;
-      background: #ff1744;
-      color: #000000;
+      background: #ff0000;
+      color: #fff;
       padding: 1rem 2rem;
       border-radius: 999px;
       text-decoration: none;
       font-weight: bold;
       transition: background 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 0 10px #ff1744;
     }
 
     .cta a:hover {
-      background: #e6002e;
-      box-shadow: 0 0 15px #ff1744;
+      background: #e60000;
+      box-shadow: 0 0 15px #ff0000;
     }
 
     footer {
       text-align: center;
       padding: 2rem;
       font-size: 0.9rem;
-      color: #999;
+      color: #64748b;
     }
   </style>
 </head>
@@ -110,30 +117,60 @@
 
   <main class="container">
     <section>
-      <h2 style="margin-bottom: 1rem; color: #ff1744;">Serviços</h2>
+      <h2 style="margin-bottom: 1rem; color: #f1f5f9;">Serviços</h2>
       <div class="services">
-        <div class="service" tabindex="0">
+        <div class="service">
           <h3>Ajustes de HTML</h3>
           <p>Corrijo e melhoro qualquer código HTML, organizando estrutura e resolvendo erros.</p>
         </div>
-        <div class="service" tabindex="0">
+        <div class="service">
           <h3>Criação de Sites</h3>
           <p>Desenvolvo sites modernos, rápidos e responsivos para empresas e projetos pessoais.</p>
         </div>
-        <div class="service" tabindex="0">
+        <div class="service">
           <h3>Remodelagem de Sites</h3>
-          <p>Transformo seu site antigo em um visual moderno e atrativo, com foco em performance e design.</p>
+          <p>Transformo sites antigos em páginas modernas e atrativas, mantendo sua identidade.</p>
         </div>
       </div>
     </section>
 
     <section class="cta">
-      <a href="https://wa.me/5554981312500" target="_blank">Fale comigo no WhatsApp</a>
+      <label for="servico" style="display:block; margin-bottom: 1rem; font-size: 1.2rem; color: #f1f5f9;">Selecione o serviço desejado:</label>
+      <select id="servico">
+        <option value="ajustes">Ajustes de HTML</option>
+        <option value="criacao">Criação de Sites</option>
+        <option value="remodelagem">Remodelagem de Sites</option>
+      </select>
+      <br>
+      <a id="whatsappBtn" href="#" onclick="enviarMensagem()">Fale comigo no WhatsApp</a>
     </section>
   </main>
 
   <footer>
     &copy; 2025 Vítor Hugo Reis. Todos os direitos reservados.
   </footer>
+
+  <script>
+    function enviarMensagem() {
+      const servico = document.getElementById('servico').value;
+      let mensagem = 'Olá, Vítor! Gostaria de falar sobre ';
+
+      switch (servico) {
+        case 'ajustes':
+          mensagem += 'ajustes de HTML.';
+          break;
+        case 'criacao':
+          mensagem += 'criação de sites.';
+          break;
+        case 'remodelagem':
+          mensagem += 'remodelagem de sites.';
+          break;
+      }
+
+      const numero = '5544981312500';
+      const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+      window.open(link, '_blank');
+    }
+  </script>
 </body>
 </html>
