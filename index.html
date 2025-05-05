@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vítor Hugo Reis | Freelancer Web</title>
   <style>
     * {
@@ -26,7 +26,7 @@
 
     header h1 {
       font-size: 2.5rem;
-      color: #e11d48;
+      color: #ff1744; /* vermelho neon */
     }
 
     header p {
@@ -40,6 +40,12 @@
       padding: 1rem;
     }
 
+    h2 {
+      margin-bottom: 1rem;
+      color: #f1f5f9;
+      text-align: center;
+    }
+
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -48,22 +54,23 @@
 
     .service {
       background: #1a1a1a;
-      border: 2px solid #334155;
+      border: 2px solid #333;
       padding: 1.5rem;
       border-radius: 1rem;
       position: relative;
-      overflow: hidden;
-      transition: transform 0.3s ease, border-color 0.3s ease;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 0px #ff1744;
     }
 
     .service:hover {
       transform: scale(1.05);
-      border-color: #e11d48;
+      border-color: #ff1744;
+      box-shadow: 0 0 15px #ff1744;
     }
 
     .service h3 {
       margin-bottom: 0.5rem;
-      color: #e11d48;
+      color: #ff1744;
     }
 
     .service p {
@@ -77,7 +84,7 @@
 
     .cta a {
       display: inline-block;
-      background: #e11d48;
+      background: #ff1744;
       color: #0f0f0f;
       padding: 1rem 2rem;
       border-radius: 999px;
@@ -87,7 +94,7 @@
     }
 
     .cta a:hover {
-      background: #d91d45;
+      background: #ff4569;
     }
 
     footer {
@@ -96,18 +103,17 @@
       font-size: 0.9rem;
       color: #64748b;
     }
-
   </style>
 </head>
 <body>
   <header>
     <h1>Vítor Hugo Reis</h1>
-    <p>Freelancer Web | Ajustes de HTML & Criação de Sites</p>
+    <p>Freelancer Web | Ajustes de HTML, Criação e Remodelagem de Sites</p>
   </header>
 
   <main class="container">
     <section>
-      <h2 style="margin-bottom: 1rem; color: #f1f5f9;">Serviços</h2>
+      <h2>Serviços</h2>
       <div class="services">
         <div class="service">
           <h3>Ajustes de HTML</h3>
@@ -119,7 +125,7 @@
         </div>
         <div class="service">
           <h3>Remodelagem de Sites</h3>
-          <p>Atualizo e transformo sites antigos em versões modernas e atrativas com melhor desempenho e design responsivo.</p>
+          <p>Transformo sites antigos em versões modernas, atrativas e otimizadas para todos os dispositivos.</p>
         </div>
       </div>
     </section>
