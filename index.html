@@ -13,9 +13,18 @@
     }
 
     body {
-      background: #000;
+      background: url('https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
       color: #f8fafc;
-      line-height: 1.6;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: -1;
     }
 
     header {
@@ -26,26 +35,29 @@
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 2.7rem;
       color: #ff0000;
-      text-shadow: 0 0 10px #ff0000;
+      text-shadow: 0 0 12px #ff0000;
     }
 
     header p {
       color: #cbd5e1;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
 
     .container {
-      max-width: 900px;
-      margin: 2rem auto;
+      max-width: 960px;
+      margin: 3rem auto;
       padding: 1rem;
+      background-color: rgba(17, 17, 17, 0.95);
+      border-radius: 1rem;
     }
 
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
+      margin-top: 1.5rem;
     }
 
     .service {
@@ -54,7 +66,6 @@
       padding: 1.5rem;
       border-radius: 1rem;
       transition: all 0.3s ease;
-      position: relative;
     }
 
     .service:hover {
@@ -106,18 +117,25 @@
       padding: 2rem;
       font-size: 0.9rem;
       color: #64748b;
+      margin-top: 3rem;
+    }
+
+    h2 {
+      color: #fff;
+      font-size: 1.8rem;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Vítor Hugo Reis</h1>
-    <p>Freelancer Web | Ajustes de HTML, Criação e Remodelagem de Sites</p>
+    <p>Freelancer Web | HTML, Sites, Aplicativos e Programação</p>
   </header>
 
   <main class="container">
     <section>
-      <h2 style="margin-bottom: 1rem; color: #f1f5f9;">Serviços</h2>
+      <h2>Serviços</h2>
       <div class="services">
         <div class="service">
           <h3>Ajustes de HTML</h3>
@@ -133,34 +151,32 @@
         </div>
         <div class="service">
           <h3>Criação de Aplicativos</h3>
-          <p>Desenvolvo aplicativos simples e eficientes para Android com foco em usabilidade.</p>
+          <p>Crio aplicativos personalizados para Android/iOS com design moderno e foco em usabilidade.</p>
         </div>
         <div class="service">
-          <h3>Python Express</h3>
-          <p>Automatizações, bots e ferramentas rápidas com programação Python de forma prática.</p>
+          <h3>Desenvolvimento Python Pro</h3>
+          <p>Criação de scripts, automações e sistemas personalizados utilizando Python.</p>
         </div>
         <div class="service">
-          <h3>Java Moderno</h3>
-          <p>Soluções robustas e orientadas a objetos com Java, ideais para sistemas mais estruturados.</p>
+          <h3>JavaCraft Solutions</h3>
+          <p>Projetos e aplicações robustas desenvolvidas com Java para desktop ou backend.</p>
         </div>
       </div>
     </section>
 
     <section class="cta">
-      <label for="servico" style="display:block; margin-bottom: 1rem; font-size: 1.2rem; color: #f1f5f9;">Selecione o serviço desejado:</label>
+      <label for="servico" style="display:block; margin-bottom: 1rem; font-size: 1.2rem;">Selecione o serviço desejado:</label>
       <select id="servico">
         <option value="ajustes">Ajustes de HTML</option>
         <option value="criacao">Criação de Sites</option>
         <option value="remodelagem">Remodelagem de Sites</option>
         <option value="apps">Criação de Aplicativos</option>
-        <option value="python">Python Express</option>
-        <option value="java">Java Moderno</option>
+        <option value="python">Desenvolvimento Python Pro</option>
+        <option value="java">JavaCraft Solutions</option>
       </select>
-      <br><br>
-      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-        <a href="#" onclick="enviarMensagem()">Fale comigo no WhatsApp</a>
-        <a href="https://www.instagram.com/vitor_freela?igsh=MWNpdzE4anBtNzBvcA==" target="_blank" style="background: #e1306c;">Meu Instagram</a>
-      </div>
+      <br />
+      <a href="#" onclick="enviarMensagem()">Fale comigo no WhatsApp</a>
+      <a href="https://www.instagram.com/vitor_freela?igsh=MWNpdzE4anBtNzBvcA==" target="_blank" style="display:inline-block; background: #8b5cf6; color: #fff; padding: 1rem 2rem; border-radius: 999px; text-decoration: none; font-weight: bold; margin-left: 1rem; transition: background 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.background='#7c3aed'; this.style.boxShadow='0 0 15px #a78bfa'" onmouseout="this.style.background='#8b5cf6'; this.style.boxShadow='none'">Acesse meu Instagram</a>
     </section>
   </main>
 
@@ -187,10 +203,10 @@
           mensagem += 'criação de aplicativos.';
           break;
         case 'python':
-          mensagem += 'programação em Python Express.';
+          mensagem += 'Desenvolvimento Python Pro.';
           break;
         case 'java':
-          mensagem += 'serviços com Java Moderno.';
+          mensagem += 'JavaCraft Solutions.';
           break;
       }
 
