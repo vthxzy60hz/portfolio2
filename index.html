@@ -175,7 +175,7 @@
         <option value="java">JavaCraft Solutions</option>
       </select>
       <br />
-      <a id="whatsappBtn">Fale comigo no WhatsApp</a>
+      <a href="#" onclick="enviarMensagem()">Fale comigo no WhatsApp</a>
     </section>
   </main>
 
@@ -184,7 +184,7 @@
   </footer>
 
   <script>
-    document.getElementById('whatsappBtn').addEventListener('click', function () {
+    function enviarMensagem() {
       const servico = document.getElementById('servico').value;
       let mensagem = 'Olá, Vítor! Gostaria de falar sobre ';
 
@@ -212,7 +212,7 @@
       const numero = '5554981312500';
       const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
       window.open(link, '_blank');
-    });
+    }
   </script>
 </body>
 </html>
