@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vítor Hugo Reis | Freelancer Web</title>
   <style>
     * {
@@ -13,9 +13,18 @@
     }
 
     body {
-      background: #000;
+      background: url('https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
       color: #f8fafc;
-      line-height: 1.6;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: -1;
     }
 
     header {
@@ -26,26 +35,29 @@
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 2.7rem;
       color: #ff0000;
-      text-shadow: 0 0 10px #ff0000;
+      text-shadow: 0 0 12px #ff0000;
     }
 
     header p {
       color: #cbd5e1;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
 
     .container {
-      max-width: 900px;
-      margin: 2rem auto;
+      max-width: 960px;
+      margin: 3rem auto;
       padding: 1rem;
+      background-color: rgba(17, 17, 17, 0.9);
+      border-radius: 1rem;
     }
 
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
+      margin-top: 1.5rem;
     }
 
     .service {
@@ -54,7 +66,6 @@
       padding: 1.5rem;
       border-radius: 1rem;
       transition: all 0.3s ease;
-      position: relative;
     }
 
     .service:hover {
@@ -106,6 +117,13 @@
       padding: 2rem;
       font-size: 0.9rem;
       color: #64748b;
+      margin-top: 3rem;
+    }
+
+    h2 {
+      color: #fff;
+      font-size: 1.8rem;
+      text-align: center;
     }
   </style>
 </head>
@@ -117,7 +135,7 @@
 
   <main class="container">
     <section>
-      <h2 style="margin-bottom: 1rem; color: #f1f5f9;">Serviços</h2>
+      <h2>Serviços</h2>
       <div class="services">
         <div class="service">
           <h3>Ajustes de HTML</h3>
@@ -135,13 +153,13 @@
     </section>
 
     <section class="cta">
-      <label for="servico" style="display:block; margin-bottom: 1rem; font-size: 1.2rem; color: #f1f5f9;">Selecione o serviço desejado:</label>
+      <label for="servico" style="display:block; margin-bottom: 1rem; font-size: 1.2rem;">Selecione o serviço desejado:</label>
       <select id="servico">
         <option value="ajustes">Ajustes de HTML</option>
         <option value="criacao">Criação de Sites</option>
         <option value="remodelagem">Remodelagem de Sites</option>
       </select>
-      <br>
+      <br />
       <a id="whatsappBtn" href="#" onclick="enviarMensagem()">Fale comigo no WhatsApp</a>
     </section>
   </main>
@@ -150,27 +168,27 @@
     &copy; 2025 Vítor Hugo Reis. Todos os direitos reservados.
   </footer>
 
-<script>
-  function enviarMensagem() {
-    const servico = document.getElementById('servico').value;
-    let mensagem = 'Olá, Vítor! Gostaria de falar sobre ';
+  <script>
+    function enviarMensagem() {
+      const servico = document.getElementById('servico').value;
+      let mensagem = 'Olá, Vítor! Gostaria de falar sobre ';
 
-    switch (servico) {
-      case 'ajustes':
-        mensagem += 'ajustes de HTML.';
-        break;
-      case 'criacao':
-        mensagem += 'criação de sites.';
-        break;
-      case 'remodelagem':
-        mensagem += 'remodelagem de sites.';
-        break;
+      switch (servico) {
+        case 'ajustes':
+          mensagem += 'ajustes de HTML.';
+          break;
+        case 'criacao':
+          mensagem += 'criação de sites.';
+          break;
+        case 'remodelagem':
+          mensagem += 'remodelagem de sites.';
+          break;
+      }
+
+      const numero = '5554981312500';
+      const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+      window.open(link, '_blank');
     }
-
-    const numero = '5554981312500';
-    const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-    window.open(link, '_blank');
-  }
   </script>
 </body>
 </html>
