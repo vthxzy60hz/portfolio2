@@ -103,6 +103,10 @@
       transition: 0.3s;
     }
 
+    .service button i {
+      margin-right: 6px;
+    }
+
     .service button:hover {
       background: #e60000;
       box-shadow: 0 0 12px #ff0000;
@@ -120,10 +124,12 @@
       border-radius: 999px;
       font-weight: bold;
       text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
+      display: inline-block;
       transition: 0.3s;
+    }
+
+    .instagram-btn i {
+      margin-right: 8px;
     }
 
     .instagram-btn:hover {
@@ -158,9 +164,7 @@
       font-size: 20px;
       cursor: pointer;
       box-shadow: 0 0 10px #ff0000;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease-in-out;
+      display: none;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -202,7 +206,7 @@
           <button onclick="enviarMensagem('apps')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
         </div>
         <div class="service">
-          <h3><i class="fa-brands fa-python"></i> Desenvolvimento Python Pro </h3>
+          <h3><i class="fab fa-python"></i> Desenvolvimento Python Pro </h3>
           <p>Criação de scripts, automações e sistemas personalizados utilizando Python.</p>
           <button onclick="enviarMensagem('python')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
         </div>
@@ -210,6 +214,21 @@
           <h3><i class="fab fa-java"></i> JavaCraft Solutions </h3>
           <p>Projetos e aplicações robustas desenvolvidas com Java para desktop ou backend.</p>
           <button onclick="enviarMensagem('java')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
+        </div>
+        <div class="service">
+          <h3><i class="fas fa-search"></i> Otimização de Sites (SEO)</h3>
+          <p>Melhore o posicionamento do seu site no Google com técnicas modernas de SEO.</p>
+          <button onclick="enviarMensagem('seo')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
+        </div>
+        <div class="service">
+          <h3><i class="fas fa-bug"></i> Correção de Bugs e Problemas</h3>
+          <p>Conserto de erros no seu site, deixando tudo funcionando sem travamentos ou falhas.</p>
+          <button onclick="enviarMensagem('bugs')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
+        </div>
+        <div class="service">
+          <h3><i class="fas fa-lightbulb"></i> Consultoria Técnica para Projetos</h3>
+          <p>Precisa de ajuda para começar um projeto da forma certa? Eu te ajudo com tudo.</p>
+          <button onclick="enviarMensagem('consultoria')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
         </div>
       </div>
     </section>
@@ -225,12 +244,13 @@
     &copy; 2025 Vítor Hugo Reis. Todos os direitos reservados.
   </footer>
 
-  <button id="top-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"><i class="fas fa-chevron-up"></i></button>
+  <button id="top-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
   <script>
     function gerarMensagem(servico) {
       let mensagem = 'Olá, Vítor! 👋 Tudo certo? Queria trocar uma ideia com você rapidinho sobre ';
-
       switch (servico) {
         case 'ajustes':
           return mensagem + 'alguns ajustes em HTML que vão deixar meu projeto ainda mais profissional! 💻✨';
@@ -244,6 +264,12 @@
           return mensagem + 'um projeto em Python que pode levar minhas automações e soluções a outro nível! 🐍⚙️';
         case 'java':
           return mensagem + 'uma proposta usando Java que pode trazer mais performance e estrutura ao meu sistema! ☕🛠️';
+        case 'seo':
+          return mensagem + 'otimizar meu site para aparecer melhor no Google com técnicas modernas de SEO! 📈🔍';
+        case 'bugs':
+          return mensagem + 'corrigir alguns bugs chatos que estão atrapalhando meu site ou sistema! 🛠️🐞';
+        case 'consultoria':
+          return mensagem + 'uma consultoria técnica para me orientar no começo de um projeto web! 💡📋';
         default:
           return '';
       }
@@ -258,13 +284,7 @@
 
     window.addEventListener('scroll', () => {
       const btn = document.getElementById('top-btn');
-      if (window.scrollY > 300) {
-        btn.style.opacity = '1';
-        btn.style.pointerEvents = 'auto';
-      } else {
-        btn.style.opacity = '0';
-        btn.style.pointerEvents = 'none';
-      }
+      btn.style.display = window.scrollY > 300 ? 'flex' : 'none';
     });
   </script>
 </body>
