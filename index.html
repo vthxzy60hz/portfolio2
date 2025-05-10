@@ -93,7 +93,7 @@
     }
 
     .service button {
-      background: #ff0000;
+      background: #25d366;
       border: none;
       padding: 0.7rem 1.2rem;
       border-radius: 30px;
@@ -101,11 +101,16 @@
       font-weight: bold;
       cursor: pointer;
       transition: 0.3s;
+      font-size: 0.95rem;
+    }
+
+    .service button i {
+      margin-right: 8px;
     }
 
     .service button:hover {
-      background: #e60000;
-      box-shadow: 0 0 12px #ff0000;
+      background: #1ebe5d;
+      box-shadow: 0 0 12px #25d366;
     }
 
     .cta {
@@ -120,8 +125,11 @@
       border-radius: 999px;
       font-weight: bold;
       text-decoration: none;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       transition: 0.3s;
+      font-size: 1rem;
     }
 
     .instagram-btn:hover {
@@ -156,16 +164,18 @@
       font-size: 20px;
       cursor: pointer;
       box-shadow: 0 0 10px #ff0000;
-      display: none;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    #top-btn.show {
+      opacity: 1;
+      pointer-events: auto;
     }
 
     #top-btn:hover {
       background: #e60000;
-    }
-
-    button i,
-    .instagram-btn i {
-      margin-right: 8px;
     }
   </style>
 </head>
@@ -180,32 +190,32 @@
       <h2>Serviços</h2>
       <div class="services">
         <div class="service">
-          <h3><i class="fas fa-code"></i> Ajustes de HTML </h3>
+          <h3><i class="fas fa-code"></i> Ajustes de HTML</h3>
           <p>Corrijo e melhoro qualquer código HTML, organizando estrutura e resolvendo erros.</p>
           <button onclick="enviarMensagem('ajustes')"><i class="fab fa-whatsapp"></i>Falar no WhatsApp</button>
         </div>
         <div class="service">
-          <h3><i class="fas fa-globe"></i> Criação de Sites </h3>
+          <h3><i class="fas fa-globe"></i> Criação de Sites</h3>
           <p>Desenvolvo sites modernos, rápidos e responsivos para empresas e projetos pessoais.</p>
           <button onclick="enviarMensagem('criacao')"><i class="fab fa-whatsapp"></i>Falar no WhatsApp</button>
         </div>
         <div class="service">
-          <h3><i class="fas fa-sync-alt"></i> Remodelagem de Sites </h3>
+          <h3><i class="fas fa-sync-alt"></i> Remodelagem de Sites</h3>
           <p>Transformo sites antigos em páginas modernas e atrativas, mantendo sua identidade.</p>
           <button onclick="enviarMensagem('remodelagem')"><i class="fab fa-whatsapp"></i>Falar no WhatsApp</button>
         </div>
         <div class="service">
-          <h3><i class="fas fa-mobile-alt"></i> Criação de Aplicativos </h3>
+          <h3><i class="fas fa-mobile-alt"></i> Criação de Aplicativos</h3>
           <p>Crio aplicativos personalizados para Android/iOS com design moderno e foco em usabilidade.</p>
           <button onclick="enviarMensagem('apps')"><i class="fab fa-whatsapp"></i>Falar no WhatsApp</button>
         </div>
         <div class="service">
-          <h3><i class="fab fa-python"></i> Desenvolvimento Python Pro </h3>
+          <h3><i class="fab fa-python"></i> Desenvolvimento Python Pro</h3>
           <p>Criação de scripts, automações e sistemas personalizados utilizando Python.</p>
           <button onclick="enviarMensagem('python')"><i class="fab fa-whatsapp"></i>Falar no WhatsApp</button>
         </div>
         <div class="service">
-          <h3><i class="fab fa-java"></i> JavaCraft Solutions </h3>
+          <h3><i class="fab fa-java"></i> JavaCraft Solutions</h3>
           <p>Projetos e aplicações robustas desenvolvidas com Java para desktop ou backend.</p>
           <button onclick="enviarMensagem('java')"><i class="fab fa-whatsapp"></i>Falar no WhatsApp</button>
         </div>
@@ -223,7 +233,9 @@
     &copy; 2025 Vítor Hugo Reis. Todos os direitos reservados.
   </footer>
 
-  <button id="top-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"><i class="fas fa-chevron-up"></i></button>
+  <button id="top-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
   <script>
     function gerarMensagem(servico) {
@@ -256,7 +268,11 @@
 
     window.addEventListener('scroll', () => {
       const btn = document.getElementById('top-btn');
-      btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+      if (window.scrollY > 300) {
+        btn.classList.add('show');
+      } else {
+        btn.classList.remove('show');
+      }
     });
   </script>
 </body>
