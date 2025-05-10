@@ -4,9 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vítor Hugo Reis | Freelancer Web</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     * {
       margin: 0;
@@ -20,7 +17,6 @@
       background-size: cover;
       color: #f8fafc;
       position: relative;
-      scroll-behavior: smooth;
     }
 
     body::before {
@@ -39,7 +35,7 @@
     }
 
     header h1 {
-      font-size: 2.8rem;
+      font-size: 2.7rem;
       color: #ff0000;
       text-shadow: 0 0 12px #ff0000;
     }
@@ -47,16 +43,14 @@
     header p {
       color: #cbd5e1;
       font-size: 1.3rem;
-      margin-top: 0.5rem;
     }
 
     .container {
       max-width: 960px;
       margin: 3rem auto;
-      padding: 2rem;
+      padding: 1rem;
       background-color: rgba(17, 17, 17, 0.95);
       border-radius: 1rem;
-      box-shadow: 0 0 20px #000;
     }
 
     .services {
@@ -72,7 +66,6 @@
       padding: 1.5rem;
       border-radius: 1rem;
       transition: all 0.3s ease;
-      backdrop-filter: blur(4px);
       text-align: center;
     }
 
@@ -93,11 +86,11 @@
     }
 
     .service button {
+      padding: 0.8rem 1.5rem;
       background: #ff0000;
       border: none;
-      padding: 0.7rem 1.2rem;
-      border-radius: 30px;
-      color: #fff;
+      border-radius: 999px;
+      color: white;
       font-weight: bold;
       cursor: pointer;
       transition: 0.3s;
@@ -105,7 +98,7 @@
 
     .service button:hover {
       background: #e60000;
-      box-shadow: 0 0 12px #ff0000;
+      box-shadow: 0 0 15px #ff0000;
     }
 
     .cta {
@@ -114,14 +107,15 @@
     }
 
     .instagram-btn {
+      display: inline-block;
       background: #833AB4;
       color: #fff;
       padding: 1rem 2rem;
       border-radius: 999px;
-      font-weight: bold;
       text-decoration: none;
-      display: inline-block;
-      transition: 0.3s;
+      font-weight: bold;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      margin-top: 1rem;
     }
 
     .instagram-btn:hover {
@@ -142,26 +136,6 @@
       font-size: 1.8rem;
       text-align: center;
     }
-
-    #top-btn {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #ff0000;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 20px;
-      cursor: pointer;
-      box-shadow: 0 0 10px #ff0000;
-      display: none;
-    }
-
-    #top-btn:hover {
-      background: #e60000;
-    }
   </style>
 </head>
 <body>
@@ -175,34 +149,34 @@
       <h2>Serviços</h2>
       <div class="services">
         <div class="service">
-          <h3><i class="fas fa-code"></i> Ajustes de HTML</h3>
+          <h3>Ajustes de HTML</h3>
           <p>Corrijo e melhoro qualquer código HTML, organizando estrutura e resolvendo erros.</p>
-          <button onclick="enviarMensagem('ajustes')">Falar no WhatsApp</button>
+          <button onclick="contatoWhatsApp('ajustes')">Falar no WhatsApp</button>
         </div>
         <div class="service">
-          <h3><i class="fas fa-globe"></i> Criação de Sites</h3>
+          <h3>Criação de Sites</h3>
           <p>Desenvolvo sites modernos, rápidos e responsivos para empresas e projetos pessoais.</p>
-          <button onclick="enviarMensagem('criacao')">Falar no WhatsApp</button>
+          <button onclick="contatoWhatsApp('criacao')">Falar no WhatsApp</button>
         </div>
         <div class="service">
-          <h3><i class="fas fa-sync-alt"></i> Remodelagem de Sites</h3>
+          <h3>Remodelagem de Sites</h3>
           <p>Transformo sites antigos em páginas modernas e atrativas, mantendo sua identidade.</p>
-          <button onclick="enviarMensagem('remodelagem')">Falar no WhatsApp</button>
+          <button onclick="contatoWhatsApp('remodelagem')">Falar no WhatsApp</button>
         </div>
         <div class="service">
-          <h3><i class="fas fa-mobile-alt"></i> Criação de Aplicativos</h3>
+          <h3>Criação de Aplicativos</h3>
           <p>Crio aplicativos personalizados para Android/iOS com design moderno e foco em usabilidade.</p>
-          <button onclick="enviarMensagem('apps')">Falar no WhatsApp</button>
+          <button onclick="contatoWhatsApp('apps')">Falar no WhatsApp</button>
         </div>
         <div class="service">
-          <h3><i class="fas fa-python"></i> Desenvolvimento Python Pro</h3>
+          <h3>Desenvolvimento Python Pro</h3>
           <p>Criação de scripts, automações e sistemas personalizados utilizando Python.</p>
-          <button onclick="enviarMensagem('python')">Falar no WhatsApp</button>
+          <button onclick="contatoWhatsApp('python')">Falar no WhatsApp</button>
         </div>
         <div class="service">
-          <h3><i class="fab fa-java"></i> JavaCraft Solutions</h3>
+          <h3>JavaCraft Solutions</h3>
           <p>Projetos e aplicações robustas desenvolvidas com Java para desktop ou backend.</p>
-          <button onclick="enviarMensagem('java')">Falar no WhatsApp</button>
+          <button onclick="contatoWhatsApp('java')">Falar no WhatsApp</button>
         </div>
       </div>
     </section>
@@ -216,41 +190,22 @@
     &copy; 2025 Vítor Hugo Reis. Todos os direitos reservados.
   </footer>
 
-  <button id="top-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"><i class="fas fa-chevron-up"></i></button>
-
   <script>
-    function gerarMensagem(servico) {
-      let mensagem = 'Olá, Vítor! 👋 Tudo certo? Queria trocar uma ideia com você rapidinho sobre ';
+    function contatoWhatsApp(servico) {
+      const numero = '554981312500';
+      const mensagens = {
+        ajustes: 'Olá, Vítor! 👋 Queria falar sobre alguns ajustes em HTML para meu projeto! 💻✨',
+        criacao: 'Olá, Vítor! 👋 Gostaria de conversar sobre a criação de um site para mim! 🌐🚀',
+        remodelagem: 'Olá, Vítor! 👋 Estou interessado em remodelar meu site antigo! 🔧🎨',
+        apps: 'Olá, Vítor! 👋 Quero criar um aplicativo moderno para minha ideia! 📱💡',
+        python: 'Olá, Vítor! 👋 Tenho interesse em um projeto com Python para automação! 🐍⚙️',
+        java: 'Olá, Vítor! 👋 Tenho uma ideia de sistema e quero usar Java! ☕🛠️'
+      };
 
-      switch (servico) {
-        case 'ajustes':
-          return mensagem + 'alguns ajustes em HTML que vão deixar meu projeto ainda mais profissional! 💻✨';
-        case 'criacao':
-          return mensagem + 'a criação de um site incrível que pode destacar ainda mais minha presença online! 🌐🚀';
-        case 'remodelagem':
-          return mensagem + 'uma remodelagem completa no meu site que vai dar uma nova cara ao meu projeto! 🔧🎨';
-        case 'apps':
-          return mensagem + 'a ideia de desenvolver um aplicativo que pode facilitar (e muito!) nossa rotina! 📱💡';
-        case 'python':
-          return mensagem + 'um projeto em Python que pode levar minhas automações e soluções a outro nível! 🐍⚙️';
-        case 'java':
-          return mensagem + 'uma proposta usando Java que pode trazer mais performance e estrutura ao meu sistema! ☕🛠️';
-        default:
-          return '';
-      }
+      const mensagem = mensagens[servico] || 'Olá, Vítor! Gostaria de falar sobre um serviço.';
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+      window.open(url, '_blank');
     }
-
-    function enviarMensagem(servico) {
-      const mensagem = gerarMensagem(servico);
-      const numero = '5554981312500';
-      const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-      window.open(link, '_blank');
-    }
-
-    window.addEventListener('scroll', () => {
-      const btn = document.getElementById('top-btn');
-      btn.style.display = window.scrollY > 300 ? 'block' : 'none';
-    });
   </script>
 </body>
 </html>
