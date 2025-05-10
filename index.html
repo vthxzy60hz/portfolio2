@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vítor Hugo Reis | Freelancer Web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     * {
       margin: 0;
@@ -17,6 +20,7 @@
       background-size: cover;
       color: #f8fafc;
       position: relative;
+      scroll-behavior: smooth;
     }
 
     body::before {
@@ -35,7 +39,7 @@
     }
 
     header h1 {
-      font-size: 2.7rem;
+      font-size: 2.8rem;
       color: #ff0000;
       text-shadow: 0 0 12px #ff0000;
     }
@@ -43,14 +47,16 @@
     header p {
       color: #cbd5e1;
       font-size: 1.3rem;
+      margin-top: 0.5rem;
     }
 
     .container {
       max-width: 960px;
       margin: 3rem auto;
-      padding: 1rem;
+      padding: 2rem;
       background-color: rgba(17, 17, 17, 0.95);
       border-radius: 1rem;
+      box-shadow: 0 0 20px #000;
     }
 
     .services {
@@ -66,6 +72,7 @@
       padding: 1.5rem;
       border-radius: 1rem;
       transition: all 0.3s ease;
+      backdrop-filter: blur(4px);
     }
 
     .service:hover {
@@ -94,6 +101,13 @@
       color: #ff0000;
       border: 2px solid #ff0000;
       text-shadow: 0 0 3px #ff0000;
+      transition: all 0.3s;
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #ff4d4d;
+      box-shadow: 0 0 8px #ff4d4d;
     }
 
     .cta a {
@@ -123,6 +137,17 @@
       box-shadow: 0 0 15px #833AB4;
     }
 
+    .mensagem-preview {
+      background: #1a1a1a;
+      padding: 1rem;
+      border: 1px solid #333;
+      border-radius: 10px;
+      color: #ccc;
+      margin-top: 1rem;
+      display: none;
+      text-align: left;
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
@@ -135,6 +160,26 @@
       color: #fff;
       font-size: 1.8rem;
       text-align: center;
+    }
+
+    #top-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #ff0000;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff0000;
+      display: none;
+    }
+
+    #top-btn:hover {
+      background: #e60000;
     }
   </style>
 </head>
@@ -149,27 +194,27 @@
       <h2>Serviços</h2>
       <div class="services">
         <div class="service">
-          <h3>Ajustes de HTML</h3>
+          <h3><i class="fas fa-code"></i> Ajustes de HTML</h3>
           <p>Corrijo e melhoro qualquer código HTML, organizando estrutura e resolvendo erros.</p>
         </div>
         <div class="service">
-          <h3>Criação de Sites</h3>
+          <h3><i class="fas fa-globe"></i> Criação de Sites</h3>
           <p>Desenvolvo sites modernos, rápidos e responsivos para empresas e projetos pessoais.</p>
         </div>
         <div class="service">
-          <h3>Remodelagem de Sites</h3>
+          <h3><i class="fas fa-sync-alt"></i> Remodelagem de Sites</h3>
           <p>Transformo sites antigos em páginas modernas e atrativas, mantendo sua identidade.</p>
         </div>
         <div class="service">
-          <h3>Criação de Aplicativos</h3>
+          <h3><i class="fas fa-mobile-alt"></i> Criação de Aplicativos</h3>
           <p>Crio aplicativos personalizados para Android/iOS com design moderno e foco em usabilidade.</p>
         </div>
         <div class="service">
-          <h3>Desenvolvimento Python Pro</h3>
+          <h3><i class="fas fa-python"></i> Desenvolvimento Python Pro</h3>
           <p>Criação de scripts, automações e sistemas personalizados utilizando Python.</p>
         </div>
         <div class="service">
-          <h3>JavaCraft Solutions</h3>
+          <h3><i class="fab fa-java"></i> JavaCraft Solutions</h3>
           <p>Projetos e aplicações robustas desenvolvidas com Java para desktop ou backend.</p>
         </div>
       </div>
@@ -177,7 +222,8 @@
 
     <section class="cta">
       <label for="servico" style="display:block; margin-bottom: 1rem; font-size: 1.2rem;">Selecione o serviço desejado:</label>
-      <select id="servico">
+      <select id="servico" onchange="mostrarMensagem()">
+        <option value="">-- Escolha um serviço --</option>
         <option value="ajustes">Ajustes de HTML</option>
         <option value="criacao">Criação de Sites</option>
         <option value="remodelagem">Remodelagem de Sites</option>
@@ -188,6 +234,8 @@
       <br />
       <a href="#" onclick="enviarMensagem()">Fale comigo no WhatsApp</a>
       <a href="https://www.instagram.com/vitor_freela?igsh=MWNpdzE4anBtNzBvcA==" target="_blank" class="instagram-btn">Meu Instagram</a>
+
+      <div class="mensagem-preview" id="mensagem-preview"></div>
     </section>
   </main>
 
@@ -195,36 +243,65 @@
     &copy; 2025 Vítor Hugo Reis. Todos os direitos reservados.
   </footer>
 
+  <button id="top-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"><i class="fas fa-chevron-up"></i></button>
+
   <script>
-    function enviarMensagem() {
-      const servico = document.getElementById('servico').value;
+    function gerarMensagem(servico) {
       let mensagem = 'Olá, Vítor! 👋 Tudo certo? Queria trocar uma ideia com você rapidinho sobre ';
 
       switch (servico) {
         case 'ajustes':
-          mensagem += 'alguns ajustes em HTML que vão deixar meu projeto ainda mais profissional! 💻✨';
-          break;
+          return mensagem + 'alguns ajustes em HTML que vão deixar meu projeto ainda mais profissional! 💻✨';
         case 'criacao':
-          mensagem += 'a criação de um site incrível que pode destacar ainda mais minha presença online! 🌐🚀';
-          break;
+          return mensagem + 'a criação de um site incrível que pode destacar ainda mais minha presença online! 🌐🚀';
         case 'remodelagem':
-          mensagem += 'uma remodelagem completa no meu site que vai dar uma nova cara ao meu projeto! 🔧🎨';
-          break;
+          return mensagem + 'uma remodelagem completa no meu site que vai dar uma nova cara ao meu projeto! 🔧🎨';
         case 'apps':
-          mensagem += 'a ideia de desenvolver um aplicativo que pode facilitar (e muito!) nossas rotinas! 📱💡';
-          break;
+          return mensagem + 'a ideia de desenvolver um aplicativo que pode facilitar (e muito!) nossa rotina! 📱💡';
         case 'python':
-          mensagem += 'um projeto em Python que pode levar minhas automações e soluções a outro nível! 🐍⚙️';
-          break;
+          return mensagem + 'um projeto em Python que pode levar minhas automações e soluções a outro nível! 🐍⚙️';
         case 'java':
-          mensagem += 'uma proposta usando Java que pode trazer mais performance e estrutura ao meu sistema! ☕🛠️';
-          break;
+          return mensagem + 'uma proposta usando Java que pode trazer mais performance e estrutura ao meu sistema! ☕🛠️';
+        default:
+          return '';
+      }
+    }
+
+    function mostrarMensagem() {
+      const servico = document.getElementById('servico').value;
+      const preview = document.getElementById('mensagem-preview');
+      const mensagem = gerarMensagem(servico);
+
+      if (mensagem) {
+        preview.style.display = 'block';
+        preview.textContent = mensagem;
+      } else {
+        preview.style.display = 'none';
+      }
+    }
+
+    function enviarMensagem() {
+      const servico = document.getElementById('servico').value;
+      const mensagem = gerarMensagem(servico);
+
+      if (!mensagem) {
+        alert('Por favor, selecione um serviço antes de continuar.');
+        return;
       }
 
       const numero = '5554981312500';
       const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
       window.open(link, '_blank');
     }
+
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('top-btn');
+      if (window.scrollY > 300) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
+    });
   </script>
 </body>
 </html>
