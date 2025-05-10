@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vítor Hugo Reis | Freelancer Web</title>
-  <meta name="description" content="Desenvolvedor web freelancer especializado em HTML, criação de sites, aplicativos e programação.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -163,6 +162,11 @@
     #top-btn:hover {
       background: #e60000;
     }
+
+    button i,
+    .instagram-btn i {
+      margin-right: 8px;
+    }
   </style>
 </head>
 <body>
@@ -178,38 +182,40 @@
         <div class="service">
           <h3><i class="fas fa-code"></i> Ajustes de HTML </h3>
           <p>Corrijo e melhoro qualquer código HTML, organizando estrutura e resolvendo erros.</p>
-          <button onclick="enviarMensagem('ajustes')">Falar no WhatsApp</button>
+          <button onclick="enviarMensagem('ajustes')"><i class="fab fa-whatsapp"></i>Falar no WhatsApp</button>
         </div>
         <div class="service">
           <h3><i class="fas fa-globe"></i> Criação de Sites </h3>
           <p>Desenvolvo sites modernos, rápidos e responsivos para empresas e projetos pessoais.</p>
-          <button onclick="enviarMensagem('criacao')">Falar no WhatsApp</button>
+          <button onclick="enviarMensagem('criacao')"><i class="fab fa-whatsapp"></i>Falar no WhatsApp</button>
         </div>
         <div class="service">
           <h3><i class="fas fa-sync-alt"></i> Remodelagem de Sites </h3>
           <p>Transformo sites antigos em páginas modernas e atrativas, mantendo sua identidade.</p>
-          <button onclick="enviarMensagem('remodelagem')">Falar no WhatsApp</button>
+          <button onclick="enviarMensagem('remodelagem')"><i class="fab fa-whatsapp"></i>Falar no WhatsApp</button>
         </div>
         <div class="service">
           <h3><i class="fas fa-mobile-alt"></i> Criação de Aplicativos </h3>
           <p>Crio aplicativos personalizados para Android/iOS com design moderno e foco em usabilidade.</p>
-          <button onclick="enviarMensagem('apps')">Falar no WhatsApp</button>
+          <button onclick="enviarMensagem('apps')"><i class="fab fa-whatsapp"></i>Falar no WhatsApp</button>
         </div>
         <div class="service">
-          <h3><i class="fas fa-terminal"></i> Desenvolvimento Python Pro </h3>
+          <h3><i class="fab fa-python"></i> Desenvolvimento Python Pro </h3>
           <p>Criação de scripts, automações e sistemas personalizados utilizando Python.</p>
-          <button onclick="enviarMensagem('python')">Falar no WhatsApp</button>
+          <button onclick="enviarMensagem('python')"><i class="fab fa-whatsapp"></i>Falar no WhatsApp</button>
         </div>
         <div class="service">
           <h3><i class="fab fa-java"></i> JavaCraft Solutions </h3>
           <p>Projetos e aplicações robustas desenvolvidas com Java para desktop ou backend.</p>
-          <button onclick="enviarMensagem('java')">Falar no WhatsApp</button>
+          <button onclick="enviarMensagem('java')"><i class="fab fa-whatsapp"></i>Falar no WhatsApp</button>
         </div>
       </div>
     </section>
 
     <section class="cta">
-      <a href="https://www.instagram.com/vitor_freela?igsh=MWNpdzE4anBtNzBvcA==" target="_blank" class="instagram-btn">Meu Instagram</a>
+      <a href="https://www.instagram.com/vitor_freela?igsh=MWNpdzE4anBtNzBvcA==" target="_blank" class="instagram-btn">
+        <i class="fab fa-instagram"></i> Meu Instagram
+      </a>
     </section>
   </main>
 
