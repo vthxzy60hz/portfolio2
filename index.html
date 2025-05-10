@@ -79,6 +79,9 @@
       margin-bottom: 0.5rem;
       color: #ff0000;
       text-shadow: 0 0 5px #ff0000;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     footer {
@@ -129,27 +132,27 @@
       <h2>Serviços</h2>
       <div class="services">
         <div class="service" onclick="enviarMensagem('ajustes')">
-          <h3>Ajustes de HTML</h3>
+          <h3>🛠️ Ajustes de HTML</h3>
           <p>Corrijo e melhoro qualquer código HTML, organizando estrutura e resolvendo erros.</p>
         </div>
         <div class="service" onclick="enviarMensagem('criacao')">
-          <h3>Criação de Sites</h3>
+          <h3>🌐 Criação de Sites</h3>
           <p>Desenvolvo sites modernos, rápidos e responsivos para empresas e projetos pessoais.</p>
         </div>
         <div class="service" onclick="enviarMensagem('remodelagem')">
-          <h3>Remodelagem de Sites</h3>
+          <h3>🎨 Remodelagem de Sites</h3>
           <p>Transformo sites antigos em páginas modernas e atrativas, mantendo sua identidade.</p>
         </div>
         <div class="service" onclick="enviarMensagem('apps')">
-          <h3>Criação de Aplicativos</h3>
+          <h3>📱 Criação de Aplicativos</h3>
           <p>Crio aplicativos personalizados para Android/iOS com design moderno e foco em usabilidade.</p>
         </div>
         <div class="service" onclick="enviarMensagem('python')">
-          <h3>Desenvolvimento Python Pro</h3>
+          <h3>🐍 Desenvolvimento Python Pro</h3>
           <p>Criação de scripts, automações e sistemas personalizados utilizando Python.</p>
         </div>
         <div class="service" onclick="enviarMensagem('java')">
-          <h3>JavaCraft Solutions</h3>
+          <h3>☕ JavaCraft Solutions</h3>
           <p>Projetos e aplicações robustas desenvolvidas com Java para desktop ou backend.</p>
         </div>
       </div>
@@ -189,7 +192,7 @@
           break;
       }
 
-      const numero = '555499999999'; // <-- Substitua pelo seu número real com DDD 54
+      const numero = '555499999999'; // <--- Altere aqui para seu número real com DDD 54
       const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
       window.open(link, '_blank');
     }
