@@ -73,6 +73,7 @@
       border-radius: 1rem;
       transition: all 0.3s ease;
       backdrop-filter: blur(4px);
+      text-align: center;
     }
 
     .service:hover {
@@ -87,65 +88,45 @@
       text-shadow: 0 0 5px #ff0000;
     }
 
+    .service p {
+      margin-bottom: 1rem;
+    }
+
+    .service button {
+      background: #ff0000;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 30px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .service button:hover {
+      background: #e60000;
+      box-shadow: 0 0 12px #ff0000;
+    }
+
     .cta {
       text-align: center;
       margin-top: 3rem;
     }
 
-    select {
-      padding: 0.7rem 1.2rem;
-      border-radius: 8px;
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-      background: #111;
-      color: #ff0000;
-      border: 2px solid #ff0000;
-      text-shadow: 0 0 3px #ff0000;
-      transition: all 0.3s;
-    }
-
-    select:focus {
-      outline: none;
-      border-color: #ff4d4d;
-      box-shadow: 0 0 8px #ff4d4d;
-    }
-
-    .cta a {
-      display: inline-block;
-      background: #ff0000;
-      color: #fff;
-      padding: 1rem 2rem;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-      margin: 0.5rem;
-    }
-
-    .cta a:hover {
-      background: #e60000;
-      box-shadow: 0 0 15px #ff0000;
-    }
-
     .instagram-btn {
       background: #833AB4;
       color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 999px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.3s;
     }
 
     .instagram-btn:hover {
       background: #6e2c91;
       box-shadow: 0 0 15px #833AB4;
-    }
-
-    .mensagem-preview {
-      background: #1a1a1a;
-      padding: 1rem;
-      border: 1px solid #333;
-      border-radius: 10px;
-      color: #ccc;
-      margin-top: 1rem;
-      display: none;
-      text-align: left;
     }
 
     footer {
@@ -196,46 +177,38 @@
         <div class="service">
           <h3><i class="fas fa-code"></i> Ajustes de HTML</h3>
           <p>Corrijo e melhoro qualquer código HTML, organizando estrutura e resolvendo erros.</p>
+          <button onclick="enviarMensagem('ajustes')">Falar no WhatsApp</button>
         </div>
         <div class="service">
           <h3><i class="fas fa-globe"></i> Criação de Sites</h3>
           <p>Desenvolvo sites modernos, rápidos e responsivos para empresas e projetos pessoais.</p>
+          <button onclick="enviarMensagem('criacao')">Falar no WhatsApp</button>
         </div>
         <div class="service">
           <h3><i class="fas fa-sync-alt"></i> Remodelagem de Sites</h3>
           <p>Transformo sites antigos em páginas modernas e atrativas, mantendo sua identidade.</p>
+          <button onclick="enviarMensagem('remodelagem')">Falar no WhatsApp</button>
         </div>
         <div class="service">
           <h3><i class="fas fa-mobile-alt"></i> Criação de Aplicativos</h3>
           <p>Crio aplicativos personalizados para Android/iOS com design moderno e foco em usabilidade.</p>
+          <button onclick="enviarMensagem('apps')">Falar no WhatsApp</button>
         </div>
         <div class="service">
           <h3><i class="fas fa-python"></i> Desenvolvimento Python Pro</h3>
           <p>Criação de scripts, automações e sistemas personalizados utilizando Python.</p>
+          <button onclick="enviarMensagem('python')">Falar no WhatsApp</button>
         </div>
         <div class="service">
           <h3><i class="fab fa-java"></i> JavaCraft Solutions</h3>
           <p>Projetos e aplicações robustas desenvolvidas com Java para desktop ou backend.</p>
+          <button onclick="enviarMensagem('java')">Falar no WhatsApp</button>
         </div>
       </div>
     </section>
 
     <section class="cta">
-      <label for="servico" style="display:block; margin-bottom: 1rem; font-size: 1.2rem;">Selecione o serviço desejado:</label>
-      <select id="servico" onchange="mostrarMensagem()">
-        <option value="">-- Escolha um serviço --</option>
-        <option value="ajustes">Ajustes de HTML</option>
-        <option value="criacao">Criação de Sites</option>
-        <option value="remodelagem">Remodelagem de Sites</option>
-        <option value="apps">Criação de Aplicativos</option>
-        <option value="python">Desenvolvimento Python Pro</option>
-        <option value="java">JavaCraft Solutions</option>
-      </select>
-      <br />
-      <a href="#" onclick="enviarMensagem()">Fale comigo no WhatsApp</a>
       <a href="https://www.instagram.com/vitor_freela?igsh=MWNpdzE4anBtNzBvcA==" target="_blank" class="instagram-btn">Meu Instagram</a>
-
-      <div class="mensagem-preview" id="mensagem-preview"></div>
     </section>
   </main>
 
@@ -267,28 +240,8 @@
       }
     }
 
-    function mostrarMensagem() {
-      const servico = document.getElementById('servico').value;
-      const preview = document.getElementById('mensagem-preview');
+    function enviarMensagem(servico) {
       const mensagem = gerarMensagem(servico);
-
-      if (mensagem) {
-        preview.style.display = 'block';
-        preview.textContent = mensagem;
-      } else {
-        preview.style.display = 'none';
-      }
-    }
-
-    function enviarMensagem() {
-      const servico = document.getElementById('servico').value;
-      const mensagem = gerarMensagem(servico);
-
-      if (!mensagem) {
-        alert('Por favor, selecione um serviço antes de continuar.');
-        return;
-      }
-
       const numero = '5554981312500';
       const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
       window.open(link, '_blank');
@@ -296,11 +249,7 @@
 
     window.addEventListener('scroll', () => {
       const btn = document.getElementById('top-btn');
-      if (window.scrollY > 300) {
-        btn.style.display = 'block';
-      } else {
-        btn.style.display = 'none';
-      }
+      btn.style.display = window.scrollY > 300 ? 'block' : 'none';
     });
   </script>
 </body>
