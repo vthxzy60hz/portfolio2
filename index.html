@@ -168,10 +168,20 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out, transform 0.3s ease;
     }
 
     #top-btn:hover {
       background: #e60000;
+      box-shadow: 0 0 20px #ff0000;
+      transform: scale(1.1);
+    }
+
+    #top-btn.show {
+      display: flex;
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -284,7 +294,11 @@
 
     window.addEventListener('scroll', () => {
       const btn = document.getElementById('top-btn');
-      btn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+      if (window.scrollY > 300) {
+        btn.classList.add('show');
+      } else {
+        btn.classList.remove('show');
+      }
     });
   </script>
 </body>
