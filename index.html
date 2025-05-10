@@ -68,6 +68,8 @@
       transition: all 0.3s ease;
       text-align: center;
       cursor: pointer;
+      text-decoration: none;
+      color: inherit;
     }
 
     .service:hover {
@@ -133,30 +135,30 @@
     <section>
       <h2>Serviços</h2>
       <div class="services">
-        <div class="service" onclick="contatoWhatsApp('ajustes')">
+        <a class="service" href="https://wa.me/554981312500?text=Olá,%20Vítor!%20👋%20Queria%20falar%20sobre%20alguns%20ajustes%20em%20HTML%20para%20meu%20projeto!%20💻✨" target="_blank">
           <h3>Ajustes de HTML</h3>
           <p>Corrijo e melhoro qualquer código HTML, organizando estrutura e resolvendo erros.</p>
-        </div>
-        <div class="service" onclick="contatoWhatsApp('criacao')">
+        </a>
+        <a class="service" href="https://wa.me/554981312500?text=Olá,%20Vítor!%20👋%20Gostaria%20de%20conversar%20sobre%20a%20criação%20de%20um%20site%20para%20mim!%20🌐🚀" target="_blank">
           <h3>Criação de Sites</h3>
           <p>Desenvolvo sites modernos, rápidos e responsivos para empresas e projetos pessoais.</p>
-        </div>
-        <div class="service" onclick="contatoWhatsApp('remodelagem')">
+        </a>
+        <a class="service" href="https://wa.me/554981312500?text=Olá,%20Vítor!%20👋%20Estou%20interessado%20em%20remodelar%20meu%20site%20antigo!%20🔧🎨" target="_blank">
           <h3>Remodelagem de Sites</h3>
           <p>Transformo sites antigos em páginas modernas e atrativas, mantendo sua identidade.</p>
-        </div>
-        <div class="service" onclick="contatoWhatsApp('apps')">
+        </a>
+        <a class="service" href="https://wa.me/554981312500?text=Olá,%20Vítor!%20👋%20Quero%20criar%20um%20aplicativo%20moderno%20para%20minha%20ideia!%20📱💡" target="_blank">
           <h3>Criação de Aplicativos</h3>
           <p>Crio aplicativos personalizados para Android/iOS com design moderno e foco em usabilidade.</p>
-        </div>
-        <div class="service" onclick="contatoWhatsApp('python')">
+        </a>
+        <a class="service" href="https://wa.me/554981312500?text=Olá,%20Vítor!%20👋%20Tenho%20interesse%20em%20um%20projeto%20com%20Python%20para%20automação!%20🐍⚙️" target="_blank">
           <h3>Desenvolvimento Python Pro</h3>
           <p>Criação de scripts, automações e sistemas personalizados utilizando Python.</p>
-        </div>
-        <div class="service" onclick="contatoWhatsApp('java')">
+        </a>
+        <a class="service" href="https://wa.me/554981312500?text=Olá,%20Vítor!%20👋%20Tenho%20uma%20ideia%20de%20sistema%20e%20quero%20usar%20Java!%20☕🛠️" target="_blank">
           <h3>JavaCraft Solutions</h3>
           <p>Projetos e aplicações robustas desenvolvidas com Java para desktop ou backend.</p>
-        </div>
+        </a>
       </div>
     </section>
 
@@ -168,23 +170,5 @@
   <footer>
     &copy; 2025 Vítor Hugo Reis. Todos os direitos reservados.
   </footer>
-
-  <script>
-    function contatoWhatsApp(servico) {
-      const numero = '554981312500';
-      const mensagens = {
-        ajustes: 'Olá, Vítor! 👋 Queria falar sobre alguns ajustes em HTML para meu projeto! 💻✨',
-        criacao: 'Olá, Vítor! 👋 Gostaria de conversar sobre a criação de um site para mim! 🌐🚀',
-        remodelagem: 'Olá, Vítor! 👋 Estou interessado em remodelar meu site antigo! 🔧🎨',
-        apps: 'Olá, Vítor! 👋 Quero criar um aplicativo moderno para minha ideia! 📱💡',
-        python: 'Olá, Vítor! 👋 Tenho interesse em um projeto com Python para automação! 🐍⚙️',
-        java: 'Olá, Vítor! 👋 Tenho uma ideia de sistema e quero usar Java! ☕🛠️'
-      };
-
-      const mensagem = mensagens[servico] || 'Olá, Vítor! Gostaria de falar sobre um serviço.';
-      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-      window.open(url, '_blank');
-    }
-  </script>
 </body>
 </html>
