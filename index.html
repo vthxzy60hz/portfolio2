@@ -67,6 +67,7 @@
       border-radius: 1rem;
       transition: all 0.3s ease;
       text-align: center;
+      cursor: pointer;
     }
 
     .service:hover {
@@ -83,22 +84,6 @@
 
     .service p {
       margin-bottom: 1rem;
-    }
-
-    .service button {
-      padding: 0.8rem 1.5rem;
-      background: #ff0000;
-      border: none;
-      border-radius: 999px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .service button:hover {
-      background: #e60000;
-      box-shadow: 0 0 15px #ff0000;
     }
 
     .cta {
@@ -148,35 +133,29 @@
     <section>
       <h2>Serviços</h2>
       <div class="services">
-        <div class="service">
+        <div class="service" onclick="contatoWhatsApp('ajustes')">
           <h3>Ajustes de HTML</h3>
           <p>Corrijo e melhoro qualquer código HTML, organizando estrutura e resolvendo erros.</p>
-          <button onclick="contatoWhatsApp('ajustes')">Falar no WhatsApp</button>
         </div>
-        <div class="service">
+        <div class="service" onclick="contatoWhatsApp('criacao')">
           <h3>Criação de Sites</h3>
           <p>Desenvolvo sites modernos, rápidos e responsivos para empresas e projetos pessoais.</p>
-          <button onclick="contatoWhatsApp('criacao')">Falar no WhatsApp</button>
         </div>
-        <div class="service">
+        <div class="service" onclick="contatoWhatsApp('remodelagem')">
           <h3>Remodelagem de Sites</h3>
           <p>Transformo sites antigos em páginas modernas e atrativas, mantendo sua identidade.</p>
-          <button onclick="contatoWhatsApp('remodelagem')">Falar no WhatsApp</button>
         </div>
-        <div class="service">
+        <div class="service" onclick="contatoWhatsApp('apps')">
           <h3>Criação de Aplicativos</h3>
           <p>Crio aplicativos personalizados para Android/iOS com design moderno e foco em usabilidade.</p>
-          <button onclick="contatoWhatsApp('apps')">Falar no WhatsApp</button>
         </div>
-        <div class="service">
+        <div class="service" onclick="contatoWhatsApp('python')">
           <h3>Desenvolvimento Python Pro</h3>
           <p>Criação de scripts, automações e sistemas personalizados utilizando Python.</p>
-          <button onclick="contatoWhatsApp('python')">Falar no WhatsApp</button>
         </div>
-        <div class="service">
+        <div class="service" onclick="contatoWhatsApp('java')">
           <h3>JavaCraft Solutions</h3>
           <p>Projetos e aplicações robustas desenvolvidas com Java para desktop ou backend.</p>
-          <button onclick="contatoWhatsApp('java')">Falar no WhatsApp</button>
         </div>
       </div>
     </section>
