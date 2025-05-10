@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vítor Hugo Reis | Freelancer Web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     * {
       margin: 0;
@@ -17,6 +20,7 @@
       background-size: cover;
       color: #f8fafc;
       position: relative;
+      scroll-behavior: smooth;
     }
 
     body::before {
@@ -35,7 +39,7 @@
     }
 
     header h1 {
-      font-size: 2.7rem;
+      font-size: 2.8rem;
       color: #ff0000;
       text-shadow: 0 0 12px #ff0000;
     }
@@ -43,14 +47,16 @@
     header p {
       color: #cbd5e1;
       font-size: 1.3rem;
+      margin-top: 0.5rem;
     }
 
     .container {
       max-width: 960px;
       margin: 3rem auto;
-      padding: 1rem;
+      padding: 2rem;
       background-color: rgba(17, 17, 17, 0.95);
       border-radius: 1rem;
+      box-shadow: 0 0 20px #000;
     }
 
     .services {
@@ -66,7 +72,8 @@
       padding: 1.5rem;
       border-radius: 1rem;
       transition: all 0.3s ease;
-      cursor: pointer;
+      backdrop-filter: blur(4px);
+      text-align: center;
     }
 
     .service:hover {
@@ -79,9 +86,47 @@
       margin-bottom: 0.5rem;
       color: #ff0000;
       text-shadow: 0 0 5px #ff0000;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+    }
+
+    .service p {
+      margin-bottom: 1rem;
+    }
+
+    .service button {
+      background: #ff0000;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 30px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .service button:hover {
+      background: #e60000;
+      box-shadow: 0 0 12px #ff0000;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .instagram-btn {
+      background: #833AB4;
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 999px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .instagram-btn:hover {
+      background: #6e2c91;
+      box-shadow: 0 0 15px #833AB4;
     }
 
     footer {
@@ -98,26 +143,24 @@
       text-align: center;
     }
 
-    .instagram-btn {
-      display: inline-block;
-      background: #833AB4;
-      color: #fff;
-      padding: 1rem 2rem;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-      margin: 2rem auto;
-      text-align: center;
+    #top-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #ff0000;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff0000;
+      display: none;
     }
 
-    .instagram-btn:hover {
-      background: #6e2c91;
-      box-shadow: 0 0 15px #833AB4;
-    }
-
-    .center {
-      text-align: center;
+    #top-btn:hover {
+      background: #e60000;
     }
   </style>
 </head>
@@ -131,71 +174,83 @@
     <section>
       <h2>Serviços</h2>
       <div class="services">
-        <div class="service" onclick="enviarMensagem('ajustes')">
-          <h3>🛠️ Ajustes de HTML</h3>
+        <div class="service">
+          <h3><i class="fas fa-code"></i> Ajustes de HTML 💻</h3>
           <p>Corrijo e melhoro qualquer código HTML, organizando estrutura e resolvendo erros.</p>
+          <button onclick="enviarMensagem('ajustes')">Falar no WhatsApp</button>
         </div>
-        <div class="service" onclick="enviarMensagem('criacao')">
-          <h3>🌐 Criação de Sites</h3>
+        <div class="service">
+          <h3><i class="fas fa-globe"></i> Criação de Sites 🌐</h3>
           <p>Desenvolvo sites modernos, rápidos e responsivos para empresas e projetos pessoais.</p>
+          <button onclick="enviarMensagem('criacao')">Falar no WhatsApp</button>
         </div>
-        <div class="service" onclick="enviarMensagem('remodelagem')">
-          <h3>🎨 Remodelagem de Sites</h3>
+        <div class="service">
+          <h3><i class="fas fa-sync-alt"></i> Remodelagem de Sites 🔧</h3>
           <p>Transformo sites antigos em páginas modernas e atrativas, mantendo sua identidade.</p>
+          <button onclick="enviarMensagem('remodelagem')">Falar no WhatsApp</button>
         </div>
-        <div class="service" onclick="enviarMensagem('apps')">
-          <h3>📱 Criação de Aplicativos</h3>
+        <div class="service">
+          <h3><i class="fas fa-mobile-alt"></i> Criação de Aplicativos 📱</h3>
           <p>Crio aplicativos personalizados para Android/iOS com design moderno e foco em usabilidade.</p>
+          <button onclick="enviarMensagem('apps')">Falar no WhatsApp</button>
         </div>
-        <div class="service" onclick="enviarMensagem('python')">
-          <h3>🐍 Desenvolvimento Python Pro</h3>
+        <div class="service">
+          <h3><i class="fas fa-python"></i> Desenvolvimento Python Pro 🐍</h3>
           <p>Criação de scripts, automações e sistemas personalizados utilizando Python.</p>
+          <button onclick="enviarMensagem('python')">Falar no WhatsApp</button>
         </div>
-        <div class="service" onclick="enviarMensagem('java')">
-          <h3>☕ JavaCraft Solutions</h3>
+        <div class="service">
+          <h3><i class="fab fa-java"></i> JavaCraft Solutions ☕</h3>
           <p>Projetos e aplicações robustas desenvolvidas com Java para desktop ou backend.</p>
+          <button onclick="enviarMensagem('java')">Falar no WhatsApp</button>
         </div>
       </div>
     </section>
 
-    <div class="center">
+    <section class="cta">
       <a href="https://www.instagram.com/vitor_freela?igsh=MWNpdzE4anBtNzBvcA==" target="_blank" class="instagram-btn">Meu Instagram</a>
-    </div>
+    </section>
   </main>
 
   <footer>
     &copy; 2025 Vítor Hugo Reis. Todos os direitos reservados.
   </footer>
 
+  <button id="top-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"><i class="fas fa-chevron-up"></i></button>
+
   <script>
-    function enviarMensagem(servico) {
+    function gerarMensagem(servico) {
       let mensagem = 'Olá, Vítor! 👋 Tudo certo? Queria trocar uma ideia com você rapidinho sobre ';
 
       switch (servico) {
         case 'ajustes':
-          mensagem += 'alguns ajustes em HTML que vão deixar meu projeto ainda mais profissional! 💻✨';
-          break;
+          return mensagem + 'alguns ajustes em HTML que vão deixar meu projeto ainda mais profissional! 💻✨';
         case 'criacao':
-          mensagem += 'a criação de um site incrível que pode destacar ainda mais minha presença online! 🌐🚀';
-          break;
+          return mensagem + 'a criação de um site incrível que pode destacar ainda mais minha presença online! 🌐🚀';
         case 'remodelagem':
-          mensagem += 'uma remodelagem completa no meu site que vai dar uma nova cara ao meu projeto! 🔧🎨';
-          break;
+          return mensagem + 'uma remodelagem completa no meu site que vai dar uma nova cara ao meu projeto! 🔧🎨';
         case 'apps':
-          mensagem += 'a ideia de desenvolver um aplicativo que pode facilitar (e muito!) nossa rotina! 📱💡';
-          break;
+          return mensagem + 'a ideia de desenvolver um aplicativo que pode facilitar (e muito!) nossa rotina! 📱💡';
         case 'python':
-          mensagem += 'um projeto em Python que pode levar minhas automações e soluções a outro nível! 🐍⚙️';
-          break;
+          return mensagem + 'um projeto em Python que pode levar minhas automações e soluções a outro nível! 🐍⚙️';
         case 'java':
-          mensagem += 'uma proposta usando Java que pode trazer mais performance e estrutura ao meu sistema! ☕🛠️';
-          break;
+          return mensagem + 'uma proposta usando Java que pode trazer mais performance e estrutura ao meu sistema! ☕🛠️';
+        default:
+          return '';
       }
+    }
 
-      const numero = '555499999999'; // <--- Altere aqui para seu número real com DDD 54
+    function enviarMensagem(servico) {
+      const mensagem = gerarMensagem(servico);
+      const numero = '5554981312500';
       const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
       window.open(link, '_blank');
     }
+
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('top-btn');
+      btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
   </script>
 </body>
 </html>
