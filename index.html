@@ -51,7 +51,7 @@
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 960px;
       margin: 3rem auto;
       padding: 2rem;
       background-color: rgba(17, 17, 17, 0.95);
@@ -61,7 +61,7 @@
 
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
       margin-top: 1.5rem;
     }
@@ -74,9 +74,6 @@
       transition: all 0.3s ease;
       backdrop-filter: blur(4px);
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
 
     .service:hover {
@@ -95,24 +92,6 @@
       margin-bottom: 1rem;
     }
 
-    .prices {
-      background: #1a1a1a;
-      border-radius: 0.5rem;
-      padding: 0.5rem;
-      color: #cbd5e1;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
-
-    .prices ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .prices li {
-      margin-bottom: 0.4rem;
-    }
-
     .service button {
       background: #ff0000;
       border: none;
@@ -122,9 +101,10 @@
       font-weight: bold;
       cursor: pointer;
       transition: 0.3s;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    }
+
+    .service button i {
+      margin-right: 6px;
     }
 
     .service button:hover {
@@ -144,10 +124,12 @@
       border-radius: 999px;
       font-weight: bold;
       text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
+      display: inline-block;
       transition: 0.3s;
+    }
+
+    .instagram-btn i {
+      margin-right: 8px;
     }
 
     .instagram-btn:hover {
@@ -183,74 +165,141 @@
       cursor: pointer;
       box-shadow: 0 0 10px #ff0000;
       display: none;
-      justify-content: center;
+      display: flex;
       align-items: center;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out, transform 0.3s ease;
     }
 
     #top-btn:hover {
-      transform: scale(1.2);
-      box-shadow: 0 0 20px #ff0000;
       background: #e60000;
+      box-shadow: 0 0 20px #ff0000;
+      transform: scale(1.1);
+    }
+
+    #top-btn.show {
+      display: flex;
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Vítor Hugo Reis</h1>
-    <p>Desenvolvedor Web & Freelancer</p>
+    <p>Freelancer Web | HTML, Sites, Aplicativos e Programação</p>
   </header>
-  <div class="container">
-    <h2>Meus Serviços</h2>
-    <div class="services">
-      <div class="service">
-        <h3>Criação de Sites</h3>
-        <p>Sites profissionais, rápidos e modernos, feitos sob medida para o seu negócio ou projeto pessoal.</p>
-        <div class="prices">
-          <ul>
-            <li>Site Simples: R$80</li>
-            <li>Site Intermediário: R$120</li>
-            <li>Site Avançado: R$150+</li>
-          </ul>
+
+  <main class="container">
+    <section>
+      <h2>Serviços</h2>
+      <div class="services">
+        <div class="service">
+          <h3><i class="fas fa-code"></i> Ajustes de HTML </h3>
+          <p>Corrijo e melhoro qualquer código HTML, organizando estrutura e resolvendo erros.</p>
+          <button onclick="enviarMensagem('ajustes')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
         </div>
-        <button><i class="fas fa-globe"></i> Contratar</button>
-      </div>
-      <div class="service">
-        <h3>Correção de Códigos</h3>
-        <p>Resolvo bugs, melhoro códigos e ajusto funcionalidades com rapidez e precisão.</p>
-        <div class="prices">
-          <ul>
-            <li>Correção Simples: R$20</li>
-            <li>Correção Intermediária: R$30</li>
-            <li>Correção Avançada: R$50+</li>
-          </ul>
+        <div class="service">
+          <h3><i class="fas fa-globe"></i> Criação de Sites </h3>
+          <p>Desenvolvo sites modernos, rápidos e responsivos para empresas e projetos pessoais.</p>
+          <button onclick="enviarMensagem('criacao')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
         </div>
-        <button><i class="fas fa-code"></i> Contratar</button>
-      </div>
-      <div class="service">
-        <h3>Sites para Negócios</h3>
-        <p>Sites personalizados para empresas, com foco em conversão, performance e presença digital.</p>
-        <div class="prices">
-          <ul>
-            <li>Landing Page: R$70</li>
-            <li>Site Institucional: R$120</li>
-            <li>Loja Virtual: R$200+</li>
-          </ul>
+        <div class="service">
+          <h3><i class="fas fa-sync-alt"></i> Remodelagem de Sites </h3>
+          <p>Transformo sites antigos em páginas modernas e atrativas, mantendo sua identidade.</p>
+          <button onclick="enviarMensagem('remodelagem')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
         </div>
-        <button><i class="fas fa-briefcase"></i> Contratar</button>
+        <div class="service">
+          <h3><i class="fas fa-mobile-alt"></i> Criação de Aplicativos </h3>
+          <p>Crio aplicativos personalizados para Android/iOS com design moderno e foco em usabilidade.</p>
+          <button onclick="enviarMensagem('apps')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
+        </div>
+        <div class="service">
+          <h3><i class="fab fa-python"></i> Desenvolvimento Python Pro </h3>
+          <p>Criação de scripts, automações e sistemas personalizados utilizando Python.</p>
+          <button onclick="enviarMensagem('python')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
+        </div>
+        <div class="service">
+          <h3><i class="fab fa-java"></i> JavaCraft Solutions </h3>
+          <p>Projetos e aplicações robustas desenvolvidas com Java para desktop ou backend.</p>
+          <button onclick="enviarMensagem('java')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
+        </div>
+        <div class="service">
+          <h3><i class="fas fa-search"></i> Otimização de Sites (SEO)</h3>
+          <p>Melhore o posicionamento do seu site no Google com técnicas modernas de SEO.</p>
+          <button onclick="enviarMensagem('seo')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
+        </div>
+        <div class="service">
+          <h3><i class="fas fa-bug"></i> Correção de Bugs e Problemas</h3>
+          <p>Conserto de erros no seu site, deixando tudo funcionando sem travamentos ou falhas.</p>
+          <button onclick="enviarMensagem('bugs')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
+        </div>
+        <div class="service">
+          <h3><i class="fas fa-lightbulb"></i> Consultoria Técnica para Projetos</h3>
+          <p>Precisa de ajuda para começar um projeto da forma certa? Eu te ajudo com tudo.</p>
+          <button onclick="enviarMensagem('consultoria')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
+        </div>
       </div>
-    </div>
-    <div class="cta">
-      <a href="https://instagram.com/seu_usuario" target="_blank" class="instagram-btn">
-        <i class="fab fa-instagram"></i> Fale Comigo no Instagram
+    </section>
+
+    <section class="cta">
+      <a href="https://www.instagram.com/vitor_freela?igsh=MWNpdzE4anBtNzBvcA==" target="_blank" class="instagram-btn">
+        <i class="fab fa-instagram"></i> Meu Instagram
       </a>
-    </div>
-  </div>
+    </section>
+  </main>
+
   <footer>
     &copy; 2025 Vítor Hugo Reis. Todos os direitos reservados.
   </footer>
-  <button id="top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
-    <i class="fas fa-arrow-up"></i>
+
+  <button id="top-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+    <i class="fas fa-chevron-up"></i>
   </button>
+
+  <script>
+    function gerarMensagem(servico) {
+      let mensagem = 'Olá, Vítor! 👋 Tudo certo? Queria trocar uma ideia com você rapidinho sobre ';
+      switch (servico) {
+        case 'ajustes':
+          return mensagem + 'alguns ajustes em HTML que vão deixar meu projeto ainda mais profissional! 💻✨';
+        case 'criacao':
+          return mensagem + 'a criação de um site incrível que pode destacar ainda mais minha presença online! 🌐🚀';
+        case 'remodelagem':
+          return mensagem + 'uma remodelagem completa no meu site que vai dar uma nova cara ao meu projeto! 🔧🎨';
+        case 'apps':
+          return mensagem + 'a ideia de desenvolver um aplicativo que pode facilitar (e muito!) nossa rotina! 📱💡';
+        case 'python':
+          return mensagem + 'um projeto em Python que pode levar minhas automações e soluções a outro nível! 🐍⚙️';
+        case 'java':
+          return mensagem + 'uma proposta usando Java que pode trazer mais performance e estrutura ao meu sistema! ☕🛠️';
+        case 'seo':
+          return mensagem + 'otimizar meu site para aparecer melhor no Google com técnicas modernas de SEO! 📈🔍';
+        case 'bugs':
+          return mensagem + 'corrigir alguns bugs chatos que estão atrapalhando meu site ou sistema! 🛠️🐞';
+        case 'consultoria':
+          return mensagem + 'uma consultoria técnica para me orientar no começo de um projeto web! 💡📋';
+        default:
+          return '';
+      }
+    }
+
+    function enviarMensagem(servico) {
+      const mensagem = gerarMensagem(servico);
+      const numero = '5554981312500';
+      const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+      window.open(link, '_blank');
+    }
+
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('top-btn');
+      if (window.scrollY > 300) {
+        btn.classList.add('show');
+      } else {
+        btn.classList.remove('show');
+      }
+    });
+  </script>
 </body>
 </html>
