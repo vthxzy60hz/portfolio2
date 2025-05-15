@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vítor Hugo Reis | Freelancer Web</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
@@ -120,9 +120,7 @@
       border-radius: 999px;
       font-weight: bold;
       text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
+      display: inline-block;
       transition: 0.3s;
     }
 
@@ -166,30 +164,9 @@
     }
 
     #top-btn:hover {
-      transform: scale(1.15);
-      box-shadow: 0 0 15px #ff0000;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-      background-color: #1a1a1a;
-    }
-
-    th, td {
-      padding: 0.8rem;
-      border: 1px solid #333;
-      text-align: center;
-    }
-
-    th {
-      background-color: #ff0000;
-      color: white;
-    }
-
-    td {
-      color: #ccc;
+      background: #e60000;
+      transform: scale(1.1);
+      box-shadow: 0 0 15px #ff1a1a;
     }
   </style>
 </head>
@@ -202,13 +179,37 @@
   <main class="container">
     <section>
       <h2>Serviços</h2>
-      <div class="services" id="services"></div>
+      <div class="services">
+        <!-- Serviços anteriores (mantidos) -->
+
+        <!-- Novos Serviços -->
+        <div class="service">
+          <h3><i class="fas fa-cogs"></i> Desenvolvimento de Sistemas</h3>
+          <p>Criação de sistemas sob medida para empresas, com alta performance e segurança.</p>
+          <p><strong>Preços:</strong><br> R$ 200 a R$ 800</p>
+          <button onclick="enviarMensagem('sistemas')">Falar no WhatsApp</button>
+        </div>
+
+        <div class="service">
+          <h3><i class="fas fa-shopping-cart"></i> Loja Virtual</h3>
+          <p>Monte sua loja online com sistema de pagamento, cadastro de produtos e painel de controle.</p>
+          <p><strong>Preços:</strong><br> R$ 150 a R$ 600</p>
+          <button onclick="enviarMensagem('loja')">Falar no WhatsApp</button>
+        </div>
+
+        <div class="service">
+          <h3><i class="fas fa-university"></i> Site para Instituições</h3>
+          <p>Criação de sites para igrejas, escolas, ONGs e organizações diversas, com identidade única.</p>
+          <p><strong>Preços:</strong><br> R$ 120 a R$ 500</p>
+          <button onclick="enviarMensagem('instituicao')">Falar no WhatsApp</button>
+        </div>
+      </div>
     </section>
 
     <section class="cta">
-      <a href="https://wa.me/5554981312500" target="_blank" class="instagram-btn"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</a>
-      <br/><br/>
-      <a href="https://www.instagram.com/vitor_freela?igsh=MWNpdzE4anBtNzBvcA==" target="_blank" class="instagram-btn"><i class="fab fa-instagram"></i> Meu Instagram</a>
+      <a href="https://www.instagram.com/vitor_freela?igsh=MWNpdzE4anBtNzBvcA==" target="_blank" class="instagram-btn">
+        <i class="fab fa-instagram"></i> Meu Instagram
+      </a>
     </section>
   </main>
 
@@ -216,46 +217,48 @@
     &copy; 2025 Vítor Hugo Reis. Todos os direitos reservados.
   </footer>
 
-  <button id="top-btn"><i class="fas fa-chevron-up"></i></button>
+  <button id="top-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
   <script>
-    const servicos = [
-      { nome: 'Ajustes de HTML', icone: 'fas fa-code', preco: 'R$20 - R$50', texto: 'Corrijo e melhoro qualquer código HTML, organizando estrutura e resolvendo erros.' },
-      { nome: 'Criação de Sites', icone: 'fas fa-globe', preco: 'R$200 - R$600', texto: 'Desenvolvo sites modernos, rápidos e responsivos para empresas e projetos pessoais.' },
-      { nome: 'Remodelagem de Sites', icone: 'fas fa-sync-alt', preco: 'R$150 - R$500', texto: 'Transformo sites antigos em páginas modernas e atrativas, mantendo sua identidade.' },
-      { nome: 'Criação de Aplicativos', icone: 'fas fa-mobile-alt', preco: 'R$500 - R$1500', texto: 'Crio aplicativos personalizados para Android/iOS com design moderno e foco em usabilidade.' },
-      { nome: 'Desenvolvimento Python Pro', icone: 'fab fa-python', preco: 'R$100 - R$800', texto: 'Criação de scripts, automações e sistemas personalizados utilizando Python.' },
-      { nome: 'JavaCraft Solutions', icone: 'fab fa-java', preco: 'R$300 - R$1000', texto: 'Projetos e aplicações robustas desenvolvidas com Java para desktop ou backend.' },
-      { nome: 'Desenvolvimento de Sistemas', icone: 'fas fa-cogs', preco: 'R$600 - R$2000', texto: 'Soluções completas para empresas com sistemas web e controle administrativo.' },
-      { nome: 'Loja Virtual', icone: 'fas fa-shopping-cart', preco: 'R$500 - R$1800', texto: 'Criação de lojas virtuais completas com painel de controle e integração com pagamentos.' },
-      { nome: 'Site para Instituições', icone: 'fas fa-university', preco: 'R$300 - R$900', texto: 'Sites personalizados para escolas, ONGs, igrejas e outras instituições.' }
-    ];
+    function gerarMensagem(servico) {
+      let mensagem = 'Olá, Vítor! 👋 Tudo certo? Queria trocar uma ideia com você rapidinho sobre ';
 
-    const container = document.getElementById('services');
-    servicos.forEach(s => {
-      container.innerHTML += `
-        <div class="service">
-          <h3><i class="${s.icone}"></i> ${s.nome}</h3>
-          <p>${s.texto}</p>
-          <p><strong>Preço:</strong> ${s.preco}</p>
-          <button onclick="enviarMensagem('${s.nome}')">Falar no WhatsApp</button>
-        </div>
-      `;
-    });
+      switch (servico) {
+        case 'ajustes':
+          return mensagem + 'alguns ajustes em HTML que vão deixar meu projeto ainda mais profissional! 💻✨';
+        case 'criacao':
+          return mensagem + 'a criação de um site incrível que pode destacar ainda mais minha presença online! 🌐🚀';
+        case 'remodelagem':
+          return mensagem + 'uma remodelagem completa no meu site que vai dar uma nova cara ao meu projeto! 🔧🎨';
+        case 'apps':
+          return mensagem + 'a ideia de desenvolver um aplicativo que pode facilitar (e muito!) nossa rotina! 📱💡';
+        case 'python':
+          return mensagem + 'um projeto em Python que pode levar minhas automações e soluções a outro nível! 🐍⚙️';
+        case 'java':
+          return mensagem + 'uma proposta usando Java que pode trazer mais performance e estrutura ao meu sistema! ☕🛠️';
+        case 'sistemas':
+          return mensagem + 'um sistema personalizado que atenda perfeitamente às necessidades do meu negócio! ⚙️💼';
+        case 'loja':
+          return mensagem + 'uma loja virtual completa e profissional para vender meus produtos online! 🛒📦';
+        case 'instituicao':
+          return mensagem + 'um site institucional moderno para apresentar minha organização com qualidade! 🏛️📢';
+        default:
+          return '';
+      }
+    }
 
     function enviarMensagem(servico) {
-      const mensagem = `Olá, Vítor! 👋 Tudo certo? Gostaria de saber mais sobre o serviço de ${servico}.`;
+      const mensagem = gerarMensagem(servico);
       const numero = '5554981312500';
       const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
       window.open(link, '_blank');
     }
 
-    const btn = document.getElementById('top-btn');
     window.addEventListener('scroll', () => {
+      const btn = document.getElementById('top-btn');
       btn.style.display = window.scrollY > 300 ? 'flex' : 'none';
-    });
-    btn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
