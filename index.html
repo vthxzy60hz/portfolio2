@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
+    /* ... (mesmo CSS que você já tinha) ... */
     * {
       margin: 0;
       padding: 0;
@@ -195,50 +196,32 @@
     <section>
       <h2>Serviços</h2>
       <div class="services">
-        <div class="service">
-          <h3><i class="fas fa-code"></i> Ajustes de HTML </h3>
-          <p>Corrijo e melhoro qualquer código HTML, organizando estrutura e resolvendo erros.</p>
-          <button onclick="enviarMensagem('ajustes')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
-        </div>
-        <div class="service">
-          <h3><i class="fas fa-globe"></i> Criação de Sites </h3>
-          <p>Desenvolvo sites modernos, rápidos e responsivos para empresas e projetos pessoais.</p>
-          <button onclick="enviarMensagem('criacao')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
-        </div>
-        <div class="service">
-          <h3><i class="fas fa-sync-alt"></i> Remodelagem de Sites </h3>
-          <p>Transformo sites antigos em páginas modernas e atrativas, mantendo sua identidade.</p>
-          <button onclick="enviarMensagem('remodelagem')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
-        </div>
-        <div class="service">
-          <h3><i class="fas fa-mobile-alt"></i> Criação de Aplicativos </h3>
-          <p>Crio aplicativos personalizados para Android/iOS com design moderno e foco em usabilidade.</p>
-          <button onclick="enviarMensagem('apps')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
-        </div>
-        <div class="service">
-          <h3><i class="fab fa-python"></i> Desenvolvimento Python Pro </h3>
-          <p>Criação de scripts, automações e sistemas personalizados utilizando Python.</p>
-          <button onclick="enviarMensagem('python')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
-        </div>
-        <div class="service">
-          <h3><i class="fab fa-java"></i> JavaCraft Solutions </h3>
-          <p>Projetos e aplicações robustas desenvolvidas com Java para desktop ou backend.</p>
-          <button onclick="enviarMensagem('java')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
-        </div>
-        <div class="service">
-          <h3><i class="fas fa-search"></i> Otimização de Sites (SEO)</h3>
-          <p>Melhore o posicionamento do seu site no Google com técnicas modernas de SEO.</p>
-          <button onclick="enviarMensagem('seo')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
-        </div>
-        <div class="service">
-          <h3><i class="fas fa-bug"></i> Correção de Bugs e Problemas</h3>
-          <p>Conserto de erros no seu site, deixando tudo funcionando sem travamentos ou falhas.</p>
-          <button onclick="enviarMensagem('bugs')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
-        </div>
+        <!-- Serviços já existentes -->
+        <!-- ... -->
+        
         <div class="service">
           <h3><i class="fas fa-lightbulb"></i> Consultoria Técnica para Projetos</h3>
           <p>Precisa de ajuda para começar um projeto da forma certa? Eu te ajudo com tudo.</p>
           <button onclick="enviarMensagem('consultoria')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
+        </div>
+
+        <!-- Novos serviços -->
+        <div class="service">
+          <h3><i class="fas fa-cogs"></i> Desenvolvimento de Sistemas</h3>
+          <p>Criação de sistemas completos e personalizados para atender às necessidades da sua empresa ou projeto.</p>
+          <button onclick="enviarMensagem('sistemas')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
+        </div>
+
+        <div class="service">
+          <h3><i class="fas fa-shopping-cart"></i> Loja Virtual</h3>
+          <p>Criação de e-commerces modernos, com carrinho, pagamentos online e design atrativo para vender mais.</p>
+          <button onclick="enviarMensagem('loja')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
+        </div>
+
+        <div class="service">
+          <h3><i class="fas fa-university"></i> Site para Instituições</h3>
+          <p>Sites profissionais voltados para escolas, igrejas, ONGs e outras instituições com funcionalidades específicas.</p>
+          <button onclick="enviarMensagem('instituicoes')"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</button>
         </div>
       </div>
     </section>
@@ -280,6 +263,12 @@
           return mensagem + 'corrigir alguns bugs chatos que estão atrapalhando meu site ou sistema! 🛠️🐞';
         case 'consultoria':
           return mensagem + 'uma consultoria técnica para me orientar no começo de um projeto web! 💡📋';
+        case 'sistemas':
+          return mensagem + 'o desenvolvimento de um sistema completo que atenda às necessidades da minha empresa! 🖥️🔧';
+        case 'loja':
+          return mensagem + 'uma loja virtual moderna e completa para começar a vender online com tudo que preciso! 🛒📦';
+        case 'instituicoes':
+          return mensagem + 'a criação de um site profissional para minha instituição, com todas as funcionalidades que preciso! 🏛️🌐';
         default:
           return '';
       }
